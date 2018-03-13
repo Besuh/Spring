@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    Your Gold: <div id="gold">${ gold }</div>
+    <div class="options">
+        <div class="box">
+            Farm
+            <p>(earns 10-20 golds)</p>
+            <form action="/process" method="post">
+                <input type="hidden" value="1" name="farm">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div class="box">
+            Cave
+            <p>(earns 5-10 golds)</p>
+            <form action="/process" method="post">
+                <input type="hidden" value="2" name="cave">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div class="box">
+            House
+            <p>(earns 2-5 golds)</p>
+            <form action="/process" method="post">
+                <input type="hidden" value="3" name="house">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div class="box">
+            Casino
+            <p>(earns/loses 0-50 golds)</p>
+            <form action="/process" method="post">
+                <input type="hidden" value="4" name="casino">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div class="box">
+            Reset
+            <p>restarts</p>
+            <form action="/process" method="post">
+                <input type="hidden" value="5" name="reset">
+                <input type="submit" value="reset">
+            </form>
+        </div>
+    </div>
+    <div>
+    ${ event }
+    </div>
+</body>
+</html>

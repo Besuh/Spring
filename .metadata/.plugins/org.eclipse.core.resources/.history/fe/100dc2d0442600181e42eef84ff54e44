@@ -1,0 +1,31 @@
+package com.besuh.NinjaGold.controllers;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class HomeController {
+	@RequestMapping("/")
+	public String index(HttpSession session) {
+		if(session.getAttribute("gold") == null){
+			session.setAttribute("gold",0);
+			session.setAttribute("res","");
+		}
+		return "index.jsp";
+	}
+	@RequestMapping(path="/process",method=RequestMethod.POST)
+	public String process(@RequestParam("farm") int farm,@RequestParam("cave") int cave,@RequestParam("house") int house,@RequestParam("casino") int casino,@RequestParam("reset") int reset, HttpSession session) {
+		System.out.println(farm);
+		int wow = farm+cave+house+casino+reset;
+		switch(wow) {
+		case 1:
+			gold=
+		}
+		return "redirect:"+ "/";
+	}
+}

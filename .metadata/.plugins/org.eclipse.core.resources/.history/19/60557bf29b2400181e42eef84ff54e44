@@ -1,0 +1,10 @@
+package com.besuh.controllerpractice.controllers;
+
+@RestController
+public class HomeController {
+	@RequestMapping("/")
+	public String hello() {
+		return "Hello World";
+	}
+
+}

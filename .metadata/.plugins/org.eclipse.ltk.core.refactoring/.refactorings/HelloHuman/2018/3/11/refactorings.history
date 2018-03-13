@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;HelloHuman/src/main/webapp/WEB-INX&apos; to &apos;WEB-INF&apos;" description="Rename resource &apos;WEB-INX&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INX" name="WEB-INF" stamp="1520883553802" updateReferences="true"/>
+</session>

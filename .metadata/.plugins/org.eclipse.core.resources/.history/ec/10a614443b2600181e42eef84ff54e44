@@ -1,0 +1,5 @@
+package com.besuh.DojoSurvey.controllers;
+
+public class HomeController {
+
+}

@@ -1,0 +1,5 @@
+package com.besuh.controllerpractice.controllers;
+
+public class HomeController {
+
+}

@@ -1,0 +1,54 @@
+package com.besuh.NinjaGold.controllers;
+
+import java.util.Random;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class HomeController {
+	@RequestMapping("/")
+	public String index(HttpSession session) {
+		if(session.getAttribute("gold") == null){
+			session.setAttribute("gold",0);
+			session.setAttribute("event","");
+		}
+		return "index.jsp";
+	}
+	@RequestMapping(path="/process",method=RequestMethod.POST)
+	public String process(@RequestParam("farm") Object farm,@RequestParam(value="cave", required=false) Object cave,@RequestParam(value="house", required=false) Object house,@RequestParam(value="casino", required=false) Object casino,@RequestParam(value="reset", required=false) Object reset, HttpSession session) {
+		System.out.println(farm);
+		int gold = 0;
+		String event = "You went to the ";
+		Random rand = new Random();
+		
+		String far = (String) farm
+		
+		switch(far) {
+		case "farm":
+			gold = rand.nextInt(11)+10;
+			event += "farm and earned" +gold+" gold";
+		case 2:
+			gold = rand.nextInt(11)+10;
+			event += "cave and earned" +gold+" gold";
+		case 3:
+			gold = rand.nextInt(11)+10;
+			event += "house and earned" +gold+" gold";
+		case 4:
+			gold = rand.nextInt(11)+10;
+			event += "casino and earned" +gold+" gold";
+		case 5:
+			gold = rand.nextInt(11)+10;
+			event += "farm and earned" +gold+" gold";
+			
+		}
+		session.setAttribute("gold",(Integer) session.getAttribute("gold")+gold);
+		session.setAttribute("event",(String) session.getAttribute("event")+event);
+		return "redirect:/";
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.besuh.controllers&apos; to &apos;com.besuh.LearningPlatform.controllers&apos;&#x0D;&#x0A;- Original project: &apos;LearningPlatform&apos;&#x0D;&#x0A;- Original element: &apos;LearningPlatform/src/main/java/com.besuh.controllers&apos;&#x0D;&#x0A;- Renamed element: &apos;LearningPlatform/src/main/java/com.besuh.LearningPlatform.controllers&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.besuh.controllers&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.besuh.controllers" name="com.besuh.LearningPlatform.controllers" qualified="false" references="true" stamp="1520900707171" textual="false" version="1.0"/>
+</session>

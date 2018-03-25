@@ -30,6 +30,10 @@ public class User {
     
     @Email(message="Invalid Email Format")
     private String email;
+    @Size(min=1)
+    private String firstName;
+    @Size(min=1)
+    private String lastName;
     @Size(min=1,max=255,message="Username cannot be blank")
     private String username;
     @Size(min=8,max=255,message="password must be longer than 8 characters")
@@ -49,7 +53,26 @@ public class User {
     
     public User() {
     }
-    public void setEmail(String email) {
+    public User(String firstName, String lastName, String username, String password) {
+    	super();
+    	this.firstName = firstName;
+    	this.lastName = lastName;
+    	this.username = username;
+    	this.password = password;
+    }
+    public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public void setEmail(String email) {
     	this.email =email;
     }
     public String getEmail() {
@@ -106,4 +129,32 @@ public class User {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
+    public boolean checkIfSuper() {
+		List<Role> roles = this.getRoles();
+		for (int i = 0; i < roles.size(); i++) {
+			if (roles.get(i).getName().equals("ROLE_SUPER")) {
+				return true;
+			}
+		}
+		return false;
+	}
+    public boolean checkIfAdmin() {
+		List<Role> roles = this.getRoles();
+		for (int i = 0; i < roles.size(); i++) {
+			if (roles.get(i).getName().equals("ROLE_ADMIN")) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean checkIfUser() {
+		List<Role> roles = this.getRoles();
+		for (int i = 0; i < roles.size(); i++) {
+			if (roles.get(i).getName().equals("ROLE_USER")) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
